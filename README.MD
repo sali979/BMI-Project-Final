@@ -13,6 +13,16 @@ Created by Syed Ali alongside the APP book with help from Dr. Babb
  18 passed tests
  Please use the attached venv, "cosmvenv", if there is trouble.
 
- #### Thank you!!
+ # BMI_Flask Getting started
+ Create virtualenv `python -m venv env`
+ Activate environment `source env/bin/activte`
+ Install reqirements `pip install -r requirements.txt`
+ Run flask server `python main.py`
+ Navigate the server url
 
+ # venv
+ Or use the attached venv "bmipenv" in the "BMI_flask..." folder
+ Run flask server `python main.py`
+ 
+  ### Thank you!!
 
