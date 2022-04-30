@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero is-primary is-fullheight-with-navbar">
+    <div class="container">
+
+  <div class="hero-body">
+    <div class="container has-text-centered">
+
+        <nav class="nav has-shadow">
+            <div class="container">
+                <label for="menu-toggle" class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <input type="checkbox" id="menu-toggle" class="is-hidden" />
+                <div class="nav-right nav-menu">
+                    <a class="nav-item is-tab is-hidden-tablet" href="{{ url_for('main.dashboard') }}">
+                        <span class="icon"><i class="fa fa-home"></i></span> Home
+                    </a>
+                    <a class="nav-item is-tab is-hidden-tablet" href="{{ url_for('record.new')}}">
+                        <span class="icon"><i class="fa fa-table"></i></span> New Record
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+
+          <section class="main-content columns is-fullheight">
+
+            <aside class="column is-2 is-narrow-mobile is-fullheight section is-hidden-mobile" style="border-right: 1px solid white;">
+                <p class="menu-label is-hidden-touch">Quick Links</p>
+                <ul class="menu-list">
+                    <li>
+                        <a href="{{ url_for('main.dashboard') }}" class="is-active">
+                            <span class="icon"><i class="fa fa-home"></i></span> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('record.new') }}" class="">
+                            <span class="icon"><i class="fa fa-table"></i></span> New Record
+                        </a>
+
+                        <a href="#" class="">
+                            <span class="icon"><i class="fa fa-help"></i></span> Help
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <div class="container column is-8">
+                <div class="section">
+
+                 <div class="hero-head">
+                    <nav class="tabs is-boxed is-fullwidth">
+                      <div class="container">
+                        <ul>
+                          <li class="is-active"><a>Total Records:  {{total_records}}</a></li>
+
+                        </ul>
+                      </div>
+                    </nav>
+                  </div>
+                    <br>
+                    <hr>
+                    <br>
+
+                <h2 class="h2 title">My Records</h2>
+
+                    {% if records %}
+                        {% for record in records %}
+                    <div class="card">
+                      <header class="card-header">
+                        <p class="card-header-title">
+                          BMI score | {{record.score }}  |
+                            Target BMI | {{record.target }}
+                        </p>
+                        <button class="card-header-icon" aria-label="more options">
+                          <span class="icon">
+                            <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                          </span>
+                        </button>
+                      </header>
+                      <div class="card-content">
+                        <div class="content">
+                          {{record.bmi}}
+                            <p href="#">Dear {{user.username}}</p> <br>
+                            <div class="columns">
+                                <div class="column card">
+                                    <h4>Report</h4>
+                                    <p>{{record.evaluation}}</p>
+                                </div>
+                                <div class="column card">
+                                    <h4>Recommendation</h4>
+                                    <p>{{record.recommendation}}</p>
+                                </div>
+                            </div>
+
+                          <br>
+                        </div>
+                      </div>
+                      <footer class="card-footer">
+                        <a href="#" class="card-footer-item">Height: {{record.height}}</a>
+                        <a href="#" class="card-footer-item">Weight: {{record.weight}}</a>
+                        <a href="#" class="card-footer-item">Age: {{record.age}}</a>
+                      </footer>
+                    </div>
+
+
+                    <br />
+                    {% endfor %}
+                        {% else %}
+                        <div class="box">
+                        <h2>You have not added any record</h2>
+                            <a href="{{ url_for('record.new') }}" class="button is-primary">Add new record</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+        </section>
+
+
+    </div>
+  </div>
+    </div>
+</section>
+{% endblock %}
