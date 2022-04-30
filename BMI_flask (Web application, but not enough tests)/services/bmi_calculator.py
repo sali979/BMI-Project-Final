@@ -1,9 +1,10 @@
 def bmi_score(height: float, weight: float) -> float:
     # always provide credit for the source of any calculation
     # https://www.cdc.gov/nccdphp/dnpao/growthcharts/training/bmiage/page5_1.html
-    # Formula: weight (lb) / [height (in)]2 x 703
+    # https://www.medicalnewstoday.com/articles/255712
+    # Formula: weight (lb) / [height (in)]2 x 5734
 
-    return round((weight / (height ** 2) * 703), 2)
+    return round((weight / (height ** 2.5) * 5734), 2)
 
 
 def bmi_category(score):

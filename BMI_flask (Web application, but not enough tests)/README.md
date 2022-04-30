@@ -1,6 +1,4 @@
 # Getting started
-- Create virtualenv `python -m venv env`
-- Activate environment `source env/bin/activte`
-- Install reqirements `pip install -r requirements.txt`
-- Run flask server `python main.py`
-- Navigate the server url. The rest is self-explanatory
+Use the attached venv "bmipenv" in the "BMI_flask (Web application, but not enough tests)" folder
+Run flask server `python main.py`
+Navigate to the link upon running

@@ -1,6 +1,6 @@
-## BMI App
+ ## BMI App
 
-Created by Syed Ali alongside the APP book with help from Dr. Babb
+ Created by Syed Ali alongside the APP book with help from Dr. Babb
 
  ## Python Development Utilities and Packages
  Github
@@ -14,15 +14,9 @@ Created by Syed Ali alongside the APP book with help from Dr. Babb
  Please use the attached venv, "cosmvenv", if there is trouble.
 
  # BMI_Flask Getting started
- Create virtualenv `python -m venv env`
- Activate environment `source env/bin/activte`
- Install reqirements `pip install -r requirements.txt`
+ Use the attached venv "bmipenv" in the "BMI_flask (Web application, but not enough tests)" folder
  Run flask server `python main.py`
- Navigate the server url
-
- # venv
- Or use the attached venv "bmipenv" in the "BMI_flask..." folder
- Run flask server `python main.py`
+ Navigate to the link upon running
  
-  ### Thank you!!
+ ### Thank you!!
 
